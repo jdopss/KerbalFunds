@@ -111,7 +111,7 @@ public class AddFunds : MonoBehaviour
         }
 
         // Draw the button to switch between adding funds and researching
-        if (GUI.Button(new Rect(50, 20, 100, 30), isAddingFunds ? "Adding Funds" : "Adding Research"))
+        if (GUI.Button(new Rect(40, 20, 100, 30), isAddingFunds ? "Adding Funds" : "Adding Research"))
         {
             isAddingFunds = !isAddingFunds;
         }
