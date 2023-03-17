@@ -3,6 +3,7 @@ using System;
 using UnityEngine.UI;
 using UnityEngine.TextCore;
 using KSP.UI.Screens;
+using static KSP.UI.Screens.MessageSystemButton;
 
 // This attribute tells Unity to run this script in all game scenes
 [KSPAddon(KSPAddon.Startup.AllGameScenes, false)]
@@ -13,12 +14,15 @@ public class AddFunds : MonoBehaviour
     private string inputString = "100"; // default input string
     private bool isAddingFunds = true; // switch between adding funds and researching
     private bool showWindow = false; // toggle window visibility
-    private ApplicationLauncherButton toolbarButton;
+    private Texture2D buttonIcon; // the icon for the toolbar button
 
-    private void Awake()
+    private void Start()
     {
-        // Create the toolbar button
-        toolbarButton = ApplicationLauncher.Instance.AddModApplication(
+        // Load the icon image file
+        buttonIcon = GameDatabase.Instance.GetTexture("KerbalFunds/icon", false);
+
+        // Add the toolbar button
+        ApplicationLauncher.Instance.AddModApplication(
             ShowWindow,
             HideWindow,
             null,
@@ -26,17 +30,11 @@ public class AddFunds : MonoBehaviour
             null,
             null,
             ApplicationLauncher.AppScenes.ALWAYS,
-            GameDatabase.Instance.GetTexture("KerbalFunds/icon.png", false));
+            buttonIcon);
     }
 
-    private void OnDestroy()
-    {
-        // Remove the toolbar button when the mod is destroyed
-        if (toolbarButton != null)
-        {
-            ApplicationLauncher.Instance.RemoveModApplication(toolbarButton);
-        }
-    }
+
+
     private void HideWindow()
     {
         showWindow = false;
