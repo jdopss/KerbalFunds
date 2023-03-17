@@ -13,14 +13,34 @@ public class AddFunds : MonoBehaviour
     private string inputString = "100"; // default input string
     private bool isAddingFunds = true; // switch between adding funds and researching
     private bool showWindow = false; // toggle window visibility
-    private Texture2D buttonTexture; // texture for the toolbar button
+    private ApplicationLauncherButton toolbarButton;
 
-    private void Start()
+    private void Awake()
     {
-        // Load the button texture from the mod's Textures folder
-        buttonTexture = GameDatabase.Instance.GetTexture("KerbalFunds/icon.png", false);
+        // Create the toolbar button
+        toolbarButton = ApplicationLauncher.Instance.AddModApplication(
+            ShowWindow,
+            HideWindow,
+            null,
+            null,
+            null,
+            null,
+            ApplicationLauncher.AppScenes.ALWAYS,
+            GameDatabase.Instance.GetTexture("KerbalFunds/icon.png", false));
     }
 
+    private void OnDestroy()
+    {
+        // Remove the toolbar button when the mod is destroyed
+        if (toolbarButton != null)
+        {
+            ApplicationLauncher.Instance.RemoveModApplication(toolbarButton);
+        }
+    }
+    private void HideWindow()
+    {
+        showWindow = false;
+    }
     private void Update()
     {
         // Open the window when the L key is pressed
@@ -34,28 +54,14 @@ public class AddFunds : MonoBehaviour
                 inputString = "100";
             }
         }
-        // Open the window when the toolbar button is clicked
-        if (ToolbarManager.Instance != null && ToolbarManager.Instance.Toolbar != null)
-        {
-            if (showWindow)
-            {
-                // Close the window when the toolbar button is clicked again
-                if (Input.GetMouseButtonDown(0))
-                {
-                    showWindow = false;
-                }
-            }
-            else
-            {
-                // Show the window when the toolbar button is clicked
-                if (Input.GetMouseButtonDown(0))
-                {
-                    showWindow = true;
-                }
-            }
-        }
     }
-
+    private void ShowWindow()
+    {
+        showWindow = true;
+        // Center the window on the screen and reset the input string
+        windowRect = new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200);
+        inputString = "100";
+    }
     private void OnGUI()
     {
         // Draw the window

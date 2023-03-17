@@ -52,6 +52,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\ref\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\..\..\..\Spiele\Lokaler Datenträger\kpstest\KSP_x64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
     <Reference Include="KSPAssets">
       <HintPath>..\ref\KSPAssets.dll</HintPath>
     </Reference>
