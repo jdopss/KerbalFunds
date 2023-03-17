@@ -32,9 +32,6 @@ public class AddFunds : MonoBehaviour
             ApplicationLauncher.AppScenes.ALWAYS,
             buttonIcon);
     }
-
-
-
     private void HideWindow()
     {
         showWindow = false;
@@ -109,13 +106,11 @@ public class AddFunds : MonoBehaviour
                 inputString = "10";
             }
         }
-
         // Draw the button to switch between adding funds and researching
         if (GUI.Button(new Rect(40, 20, 110, 30), isAddingFunds ? "Adding Funds" : "Adding Research"))
         {
             isAddingFunds = !isAddingFunds;
         }
-
         // Make the window draggable
         GUI.DragWindow();
     }
