@@ -32,10 +32,12 @@ public class AddFunds : MonoBehaviour
             ApplicationLauncher.AppScenes.ALWAYS,
             buttonIcon);
     }
+
     private void HideWindow()
     {
         showWindow = false;
     }
+
     private void Update()
     {
         // Open the window when the L key is pressed
@@ -50,6 +52,7 @@ public class AddFunds : MonoBehaviour
             }
         }
     }
+
     private void ShowWindow()
     {
         showWindow = true;
@@ -57,6 +60,7 @@ public class AddFunds : MonoBehaviour
         windowRect = new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200);
         inputString = "100";
     }
+
     private void OnGUI()
     {
         // Draw the window
@@ -71,6 +75,7 @@ public class AddFunds : MonoBehaviour
             }
         }
     }
+
     private void WindowFunction(int windowID)
     {
         // Draw the input field and the submit button
@@ -106,6 +111,7 @@ public class AddFunds : MonoBehaviour
                 inputString = "10";
             }
         }
+
         // Draw the button to switch between adding funds and researching
         if (GUI.Button(new Rect(40, 20, 115, 30), isAddingFunds ? "Adding Funds" : "Adding Research"))
         {
@@ -113,5 +119,6 @@ public class AddFunds : MonoBehaviour
         }
         // Make the window draggable
         GUI.DragWindow();
+
     }
 }
