@@ -3,4 +3,4 @@ name: 'upload artifact'
 - uses: actions/upload-artifact@v3
   with:
     name: kerbfunds.dll
-    path: path/to/artifact/world.txt
+    path: D:/a/KerbalFunds/KerbalFunds/kerbfunds.dll
