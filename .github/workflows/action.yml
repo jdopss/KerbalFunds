@@ -1,6 +1,0 @@
-name: 'upload artifact'
-
-- uses: actions/upload-artifact@v3
-  with:
-    name: kerbfunds.dll
-    path: D:/a/KerbalFunds/KerbalFunds/kerbfunds.dll
