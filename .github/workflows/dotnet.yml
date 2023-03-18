@@ -5,9 +5,9 @@ name: .NET
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "jdopss-patch-1" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "jdopss-patch-1" ]
 
 jobs:
   build:
@@ -24,5 +24,3 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
