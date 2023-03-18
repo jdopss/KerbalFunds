@@ -53,22 +53,22 @@
       <HintPath>..\ref\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\..\..\..\Spiele\Lokaler Datenträger\kpstest\KSP_x64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>..\ref\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="KSPAssets">
       <HintPath>..\ref\KSPAssets.dll</HintPath>
     </Reference>
     <Reference Include="KSPAssets.XmlSerializers">
-      <HintPath>..\..\..\..\..\..\Spiele\Lokaler Datenträger\kpstest\KSP_x64_Data\Managed\KSPAssets.XmlSerializers.dll</HintPath>
+      <HintPath>..\ref\KSPAssets.XmlSerializers.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>..\..\..\..\..\..\Spiele\Lokaler Datenträger\kpstest\KSP_x64_Data\Managed\Mono.Cecil.dll</HintPath>
+      <HintPath>..\ref\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Posix">
-      <HintPath>..\..\..\..\..\..\Spiele\Lokaler Datenträger\kpstest\KSP_x64_Data\Managed\Mono.Posix.dll</HintPath>
+      <HintPath>..\ref\Mono.Posix.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Security">
-      <HintPath>..\..\..\..\..\..\Spiele\Lokaler Datenträger\kpstest\KSP_x64_Data\Managed\Mono.Security.dll</HintPath>
+      <HintPath>..\ref\Mono.Security.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -87,7 +87,7 @@
       <HintPath>..\ref\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>..\..\..\..\..\..\Spiele\Lokaler Datenträger\kpstest\KSP_x64_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+      <HintPath>..\ref\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\ref\UnityEngine.CoreModule.dll</HintPath>
@@ -96,7 +96,7 @@
       <HintPath>..\ref\UnityEngine.GameCenterModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>..\..\..\..\..\..\Spiele\Lokaler Datenträger\kpstest\KSP_x64_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>..\ref\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
       <HintPath>..\ref\UnityEngine.IMGUIModule.dll</HintPath>
@@ -128,7 +128,7 @@
       <HintPath>..\ref\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VFXModule">
-      <HintPath>..\..\..\..\..\..\Spiele\Lokaler Datenträger\kpstest\KSP_x64_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
+      <HintPath>..\ref\UnityEngine.VFXModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
