@@ -22,3 +22,8 @@ jobs:
         dotnet-version: 5.0.x
     - name: Build
       run: dotnet build kerbfunds --output kerbfunds/bin
+      
+- uses: actions/upload-artifact@v3
+  with:
+    name: kerbfunds.dll
+    path: D:\\a\KerbalFunds\KerbalFunds\kerbfunds\bin\kerbfunds.dll
