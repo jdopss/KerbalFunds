@@ -16,6 +16,8 @@ public class AddFunds : MonoBehaviour
     private bool showWindow = false; // toggle window visibility
     private Texture2D buttonIcon; // the icon for the toolbar button
     private ApplicationLauncherButton toolbarButton;
+    private float x = 100f;
+    private float y = 100f;
     public void Destroy()
     {
         if (toolbarButton != null)
@@ -39,11 +41,27 @@ public class AddFunds : MonoBehaviour
             null,
             ApplicationLauncher.AppScenes.ALWAYS,
             buttonIcon);
+        // Load the saved position of the window
+        if (PlayerPrefs.HasKey("windowX"))
+        {
+            x = PlayerPrefs.GetFloat("windowX");
+        }
+        if (PlayerPrefs.HasKey("windowY"))
+        {
+            y = PlayerPrefs.GetFloat("windowY");
+        }
+        if (PlayerPrefs.HasKey("windowVisible"))
+        {
+            showWindow = PlayerPrefs.GetInt("windowVisible") == 1;
+        }
     }
 
     private void HideWindow()
     {
         showWindow = false;
+        PlayerPrefs.SetFloat("windowX", windowRect.x);
+        PlayerPrefs.SetFloat("windowY", windowRect.y);
+        PlayerPrefs.SetInt("windowVisible", showWindow ? 1 : 0);
     }
 
     private void Update()
@@ -61,11 +79,12 @@ public class AddFunds : MonoBehaviour
         }
     }
 
+
     private void ShowWindow()
     {
         showWindow = true;
         // Center the window on the screen and reset the input string
-        windowRect = new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200);
+        windowRect = new Rect(x, y, windowRect.width, windowRect.height);
         inputString = "100";
     }
 
@@ -84,8 +103,14 @@ public class AddFunds : MonoBehaviour
         }
     }
 
-    private void WindowFunction(int windowID)
+private void WindowFunction(int windowID)
+{
+    // Add the close button in the top left corner
+    if (GUI.Button(new Rect(windowRect.width - 25, 5, 20, 20), "x"))
     {
+        HideWindow();
+    }
+
         // Draw the input field and the submit button
         inputString = GUI.TextField(new Rect(10, 60, 180, 20), inputString);
 
