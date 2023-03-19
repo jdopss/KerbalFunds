@@ -15,7 +15,18 @@ public class AddFunds : MonoBehaviour
     private bool isAddingFunds = true; // switch between adding funds and researching
     private bool showWindow = false; // toggle window visibility
     private Texture2D buttonIcon; // the icon for the toolbar button
-
+    private ApplicationLauncherButton toolbarButton;
+    
+    
+    public void Destroy()
+    {
+        if (toolbarButton != null)
+        {
+            ApplicationLauncher.Instance.RemoveModApplication(toolbarButton);
+            toolbarButton = null;
+        }
+    }
+    
     private void Start()
     {
         // Load the icon image file
@@ -119,6 +130,5 @@ public class AddFunds : MonoBehaviour
         }
         // Make the window draggable
         GUI.DragWindow();
-
     }
 }
