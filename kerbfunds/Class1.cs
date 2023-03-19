@@ -89,6 +89,11 @@ public class AddFunds : MonoBehaviour
 
     private void WindowFunction(int windowID)
     {
+        // Add the close button in the top left corner
+    if (GUI.Button(new Rect(windowRect.width - 25, 5, 20, 20), "x"))
+    {
+        HideWindow();
+    }
         // Draw the input field and the submit button
         inputString = GUI.TextField(new Rect(10, 60, 180, 20), inputString);
 
